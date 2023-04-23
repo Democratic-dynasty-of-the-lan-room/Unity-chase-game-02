@@ -21,6 +21,7 @@ public class FinishScript : MonoBehaviour
         text.enabled = false;
         EnemyController.enabled = true;
         Player.SetActive(true);
+        navMeshAgent.enabled = true;
        
     }
 
@@ -39,7 +40,8 @@ public class FinishScript : MonoBehaviour
             Player.SetActive(false);
             text.enabled = true;
             EnemyController.enabled = false;
-            
+            navMeshAgent.enabled = false;
+
         }
     }
 
