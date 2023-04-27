@@ -11,14 +11,18 @@ public class FinishScript : MonoBehaviour
     [SerializeField] GameObject Player;
     [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] EnemyController EnemyController;
-    [SerializeField] GameObject Enemy;
 
-    public TextMeshProUGUI text;
+    //Getting all the menus
+    [SerializeField] GameObject Enemy;
+    [SerializeField] GameObject PauseMenu;
+    [SerializeField] GameObject FinishMenu;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        text.enabled = false;
+        FinishMenu.SetActive(false);
         EnemyController.enabled = true;
         Player.SetActive(true);
         navMeshAgent.enabled = true;
@@ -38,9 +42,14 @@ public class FinishScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Player.SetActive(false);
-            text.enabled = true;
+            FinishMenu.SetActive(true);
             EnemyController.enabled = false;
             navMeshAgent.enabled = false;
+            PauseMenu.SetActive(false);
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
 
         }
     }

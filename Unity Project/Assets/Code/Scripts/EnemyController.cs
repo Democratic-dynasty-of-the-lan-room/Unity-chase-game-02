@@ -9,25 +9,34 @@ public class EnemyController : MonoBehaviour
 {
 
     [SerializeField] GameObject Player;
-  
+
+    [SerializeField] GameObject PauseMenu;
+
     Transform target;
     NavMeshAgent agent;
 
 
     public float lookRadius = 10;
 
-    public TextMeshProUGUI MissionFailed;
+    public GameObject RestartMenu;
 
-    //Check if objects collide for sword
+    //Check if enemy and player collide
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             //If player touches chaser game end
-            MissionFailed.enabled = true;
+            RestartMenu.SetActive(true);
+            // setting the player to false so that you can't move after the end
             Player.SetActive(false);
+            //Enabling this
             this.enabled = false;
 
+            //Showscursor so that you can click restart
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            PauseMenu.SetActive(false);
         }
     }
 
@@ -40,14 +49,19 @@ public class EnemyController : MonoBehaviour
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
 
-        // making sure mission failed is off at the start
-        MissionFailed.enabled = false;
+        // making sure RestartMenu is off at the start
+        RestartMenu.SetActive(false);
+
+
+        PauseMenu.SetActive(true);
 
         //Making sure Player is set to true? I guess
         Player.SetActive(true);
 
         //this script I think
         this.enabled = true;
+
+        ;
     }
 
     // Update is called once per frame
