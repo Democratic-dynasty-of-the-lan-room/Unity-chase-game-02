@@ -49,11 +49,9 @@ public class EnemyController : MonoBehaviour
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
 
-        // making sure RestartMenu is off at the start
-        RestartMenu.SetActive(false);
+       
 
-
-        PauseMenu.SetActive(true);
+    
 
         //Making sure Player is set to true? I guess
         Player.SetActive(true);

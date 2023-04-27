@@ -11,11 +11,13 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    //[SerializeField] GameObject pauseMenu;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        pauseMenuUI.SetActive(false);
     }
 
     // Update is called once per frame

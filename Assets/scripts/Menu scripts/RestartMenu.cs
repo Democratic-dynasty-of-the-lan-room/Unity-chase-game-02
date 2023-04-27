@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class RestartMenu : MonoBehaviour
 {
+
+    [SerializeField] GameObject restartMenu;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // making sure RestartMenu is off at the start
+        restartMenu.SetActive(false);
     }
 
     // Update is called once per frame
