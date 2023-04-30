@@ -16,6 +16,8 @@ public class FinishScript : MonoBehaviour
     [SerializeField] GameObject Enemy;
     [SerializeField] GameObject PauseMenu;
     [SerializeField] GameObject FinishMenu;
+    [SerializeField] GameObject InventoryScript;
+
 
 
 
@@ -42,13 +44,19 @@ public class FinishScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Player.SetActive(false);
-            FinishMenu.SetActive(true);
+            
             EnemyController.enabled = false;
             navMeshAgent.enabled = false;
+
+
+            FinishMenu.SetActive(true);
             PauseMenu.SetActive(false);
+            InventoryScript.SetActive(false);
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+
+            
 
 
         }

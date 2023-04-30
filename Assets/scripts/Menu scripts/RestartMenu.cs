@@ -7,6 +7,9 @@ public class RestartMenu : MonoBehaviour
 {
 
     [SerializeField] GameObject restartMenu;
+    
+
+
 
     // Start is called before the first frame update
     void Start()

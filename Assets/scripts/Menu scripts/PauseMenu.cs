@@ -11,12 +11,17 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    [SerializeField] GameObject InventoryScript;
+
+    private InventoryScript inventory;
+
     //[SerializeField] GameObject pauseMenu;
 
 
     // Start is called before the first frame update
     void Start()
     {
+
         pauseMenuUI.SetActive(false);
     }
 
@@ -43,7 +48,9 @@ public class PauseMenu : MonoBehaviour
 
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;    
+        GameIsPaused = false;
+
+        InventoryScript.SetActive(true);
     }
 
     void Pause()
@@ -54,6 +61,9 @@ public class PauseMenu : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        InventoryScript.SetActive(false);
+
     }
 
     public void LoadMenu()

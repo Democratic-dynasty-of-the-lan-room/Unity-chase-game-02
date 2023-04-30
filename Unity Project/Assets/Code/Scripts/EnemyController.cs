@@ -12,6 +12,8 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] GameObject PauseMenu;
 
+    [SerializeField] GameObject InventoryScript;
+
     Transform target;
     NavMeshAgent agent;
 
@@ -37,6 +39,7 @@ public class EnemyController : MonoBehaviour
             Cursor.visible = true;
 
             PauseMenu.SetActive(false);
+            InventoryScript.SetActive(false);
         }
     }
 
