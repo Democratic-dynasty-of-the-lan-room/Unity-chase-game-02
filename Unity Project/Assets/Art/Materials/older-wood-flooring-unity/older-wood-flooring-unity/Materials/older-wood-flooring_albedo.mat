@@ -29,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 2800000, guid: 97b82dd38c5e08d42a02602beccb9550, type: 3}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 40, y: 90}
         m_Offset: {x: 0, y: 0}
     - _DetailMask:
         m_Texture: {fileID: 0}
@@ -41,11 +41,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 40, y: 90}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: cca2c3d35b1ec4c4b8c52d9736802047, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 40, y: 90}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 2800000, guid: 7ea6afeb231ceb54d88bfd8ec3036e64, type: 3}

@@ -22,7 +22,7 @@ public class PickUpObjects : MonoBehaviour
         
     }
 
-    //function to be called in pickupscript. Instanciates button in inventory
+    //function to be called in pickupscript. Instanciates button in inventory and prefab?
     public void Instanciates()
     {
         
@@ -33,7 +33,7 @@ public class PickUpObjects : MonoBehaviour
             {
                 
                 Instantiate(itemButton, inventory.slots[i].transform, false);
-                Destroy(gameObject);
+                Destroy(this.gameObject);
 
                 inventory.isFull[i] = true;         
 
@@ -41,4 +41,24 @@ public class PickUpObjects : MonoBehaviour
             }
         }
     }
+
+    //Function called for any object with handtag that is picked up
+    public void Hand()
+    {
+      for (int i = 0; i < inventory.Handslots.Length; i++)
+      {
+   
+            if (inventory.HandisFull[i] == false)
+            { 
+
+                Instantiate(itemButton, inventory.Handslots[i].transform, false);
+                Destroy(gameObject);
+   
+                inventory.HandisFull[i] = true;
+
+                break;
+            }
+      }
+    }
+
 }

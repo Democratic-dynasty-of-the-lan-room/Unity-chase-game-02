@@ -10,6 +10,7 @@ public class PickUpScript : MonoBehaviour
     private InventoryScript inventory;
 
     [SerializeField] private string selectableTag = "Selectable";
+    [SerializeField] private string HandTag = "Handtag";
 
     [SerializeField] GameObject PressEToPickUp;
 
@@ -44,16 +45,40 @@ public class PickUpScript : MonoBehaviour
                     PickUpObjects pickUpObjects = hit.collider.gameObject.GetComponent<PickUpObjects>();
 
                         if (pickUpObjects != null)
-                        {
-                            //call function from pickupobjects script
-                            pickUpObjects.Instanciates();
-                        }                  
+                        {                      
+                        //call function from pickupobjects script
+                        pickUpObjects.Instanciates();
+                        PressEToPickUp.SetActive(false);
+                    }                  
                     }                         
+            }//For things held in hand, probably a bad way to do this
+            else if (selection.CompareTag(HandTag))
+            {
+               PressEToPickUp.SetActive(true);
+
+               if (Input.GetKeyDown(KeyCode.E))
+               {
+
+                    
+                    PickUpObjects pickUpObjects = hit.collider.gameObject.GetComponent<PickUpObjects>();
+
+                    if (pickUpObjects != null)
+                    {
+                        //call function from pickupobjects script
+                        pickUpObjects.Hand();
+                        PressEToPickUp.SetActive(false);
+                    }
+               }
+            }
+            else
+            {
+                PressEToPickUp.SetActive(false);
             }
         }
         else
         {
             PressEToPickUp.SetActive(false);
         }
+
     }
 }

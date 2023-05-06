@@ -8,6 +8,9 @@ public class InventoryScript : MonoBehaviour
     public bool[] isFull;
     public GameObject[] slots;
 
+    public bool[] HandisFull;
+    public GameObject[] Handslots;
+
     public List<InventoryScript> scripts;
 
     public static bool InventoryIsOpen = false;
