@@ -11,6 +11,8 @@ public class FlashLight : MonoBehaviour
 
     private Light Torchlight;
 
+   // private float testLightIntensity = 1;
+
     [SerializeField] double MaxLightRange = 0.001;
     [SerializeField] double MinLightRange = -0.001;
 
@@ -44,14 +46,16 @@ public class FlashLight : MonoBehaviour
         if (scrollInput > 0 && Torchlight.range < MaxLightRange)
         {
             Torchlight.spotAngle --;
-            Torchlight.range++;
-           
+            Torchlight.range++;          
+
             Debug.Log("MouseWheel");
         }
         if (scrollInput < 0 && Torchlight.range > MinLightRange)
         {
             Torchlight.spotAngle++;
-            Torchlight.range--;        
+            Torchlight.range--;
+
+           // Torchlight.intensity = testLightIntensity + 0.1;
         }
 
 
