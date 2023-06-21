@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.5
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.004596342, g: 0.0057550943, b: 0.007260613, a: 0.5}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: c670473b3b017ca4da32f5dd2ea668dd, type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_LightingSettings: {fileID: 4890085278179872738, guid: fbeb2c17bfa05b64c875e147c109c850, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -1675,7 +1675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f9931e9ac663d4e8216dba48f4efc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemButton: {fileID: 8903918739483906253, guid: 740abb9fd06755f4cbcc56374248be63, type: 3}
+  itemButton: {fileID: 0}
 --- !u!1 &182141967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3521,8 +3521,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6573c40ac446be14287f8991bec14eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 1841126147}
-  InventoryScript: {fileID: 1874861933}
+  pauseMenuUI: {fileID: 0}
+  InventoryScript: {fileID: 0}
 --- !u!1 &319986424
 GameObject:
   m_ObjectHideFlags: 0
@@ -4745,6 +4745,8 @@ MonoBehaviour:
   Player: {fileID: 1874861933}
   PauseMenu: {fileID: 308034127}
   InventoryScript: {fileID: 1874861933}
+  target: {fileID: 0}
+  agent: {fileID: 0}
   lookRadius: 100
   RestartMenu: {fileID: 2020305496}
 --- !u!54 &417766099
@@ -5144,6 +5146,8 @@ MonoBehaviour:
   sensX: 400
   sensY: 400
   orientation: {fileID: 285932653}
+  xRotation: 0
+  yRotation: 0
 --- !u!81 &451595785
 AudioListener:
   m_ObjectHideFlags: 0
@@ -7523,7 +7527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f9931e9ac663d4e8216dba48f4efc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemButton: {fileID: 8903918739483906253, guid: c19d95863271e8e459e6b8fe886b31f6, type: 3}
+  itemButton: {fileID: 0}
 --- !u!1 &680629008
 GameObject:
   m_ObjectHideFlags: 0
@@ -9917,7 +9921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f9931e9ac663d4e8216dba48f4efc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemButton: {fileID: 8903918739483906253, guid: 9fb4cf710c78921499aafec102696aff, type: 3}
+  itemButton: {fileID: 0}
 --- !u!1 &913494947
 GameObject:
   m_ObjectHideFlags: 0
@@ -10365,6 +10369,8 @@ MonoBehaviour:
   Player: {fileID: 1874861933}
   PauseMenu: {fileID: 308034127}
   InventoryScript: {fileID: 1874861933}
+  target: {fileID: 0}
+  agent: {fileID: 0}
   lookRadius: 500
   RestartMenu: {fileID: 2020305496}
 --- !u!54 &954472117
@@ -14120,6 +14126,8 @@ MonoBehaviour:
   Player: {fileID: 1874861933}
   PauseMenu: {fileID: 308034127}
   InventoryScript: {fileID: 1874861933}
+  target: {fileID: 0}
+  agent: {fileID: 0}
   lookRadius: 54.8
   RestartMenu: {fileID: 2020305496}
 --- !u!54 &1228816652
@@ -20770,7 +20778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f9931e9ac663d4e8216dba48f4efc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemButton: {fileID: 3238933211843698238, guid: a59938f6c5508854a93bc384d3c57b87, type: 3}
+  itemButton: {fileID: 0}
 --- !u!1 &1817487686
 GameObject:
   m_ObjectHideFlags: 0
@@ -21761,9 +21769,13 @@ MonoBehaviour:
   groundDrag: 5
   playerHeight: 2
   whatIsGround:
-    serializedVersion: 2
     m_Bits: 8
+  grounded: 0
   orientation: {fileID: 285932653}
+  horizontalInput: 0
+  verticalInput: 0
+  moveDirection: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
 --- !u!54 &1874861936
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21856,18 +21868,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09037609187eb244f8094b909cf4100e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 000000
-  slots:
-  - {fileID: 1159948154}
-  - {fileID: 1781091999}
-  - {fileID: 1163106828}
-  HandisFull: 0000
-  Handslots:
-  - {fileID: 1488334629}
-  - {fileID: 646100969}
+  isFull: 
+  slots: []
+  HandisFull: 
+  Handslots: []
   scripts: []
-  Inventory: {fileID: 450578447}
-  pauseMenu: {fileID: 308034127}
+  Inventory: {fileID: 0}
+  pauseMenu: {fileID: 0}
 --- !u!114 &1874861941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21882,8 +21889,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectableTag: Selectable
   HandTag: Handtag
-  PressEToPickUp: {fileID: 1829788513}
-  rayLength: 3
+  PressEToPickUp: {fileID: 0}
+  rayLength: 0
 --- !u!1 &1876077928
 GameObject:
   m_ObjectHideFlags: 0
@@ -22406,6 +22413,8 @@ MonoBehaviour:
   Player: {fileID: 1874861933}
   PauseMenu: {fileID: 308034127}
   InventoryScript: {fileID: 1874861933}
+  target: {fileID: 0}
+  agent: {fileID: 0}
   lookRadius: 100
   RestartMenu: {fileID: 2020305496}
 --- !u!1 &1916186808
@@ -23141,7 +23150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f9931e9ac663d4e8216dba48f4efc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemButton: {fileID: 8903918739483906253, guid: c19d95863271e8e459e6b8fe886b31f6, type: 3}
+  itemButton: {fileID: 0}
 --- !u!54 &2005843522
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23444,7 +23453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d5f5132fd11c6c4dbe6e9d769e110a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartMenu: {fileID: 2020305496}
+  restartMenu: {fileID: 0}
 --- !u!1 &2021547987
 GameObject:
   m_ObjectHideFlags: 0
@@ -24353,7 +24362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f9931e9ac663d4e8216dba48f4efc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemButton: {fileID: 8273284563218733026, guid: edd97d57cd31aa0408de8dd2f39d37a8, type: 3}
+  itemButton: {fileID: 0}
 --- !u!1 &2100428177
 GameObject:
   m_ObjectHideFlags: 0
