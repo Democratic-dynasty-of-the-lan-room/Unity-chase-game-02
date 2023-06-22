@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Selectable
   - Handtag
+  - PlayerBody
   layers:
   - Default
   - TransparentFX
