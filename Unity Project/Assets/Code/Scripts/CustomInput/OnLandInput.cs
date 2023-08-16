@@ -6,6 +6,7 @@ namespace Code.Scripts.CustomInput
     public class OnLandInput : MonoBehaviour
     {
         public Vector2 MoveInput { get; private set; } = Vector2.zero;
+        public bool MoveIsPressed { get; private set; } = false;
         public Vector2 LookInput { get; private set; } = Vector2.zero;
 
         private InputActions _input;
@@ -36,6 +37,7 @@ namespace Code.Scripts.CustomInput
         private void SetMove(InputAction.CallbackContext context)
         {
             MoveInput = context.ReadValue<Vector2>();
+            MoveIsPressed = MoveInput != Vector2.zero;
         }
         
         private void SetLook(InputAction.CallbackContext context)

@@ -7,12 +7,20 @@ using UnityEngine.Serialization;
 
 public class OnLandController : MonoBehaviour
 {
+    public Transform cameraFollow;
     private Rigidbody _rigidbody;
     
-    [SerializeField]
-    private OnLandInput input;
+    [SerializeField] private OnLandInput input;
 
     private Vector3 _playerMoveInput = Vector3.zero;
+
+    private Vector3 _playerLookInput = Vector3.zero;
+    private Vector3 _previousPlayerLookInput = Vector3.zero;
+
+    private float _cameraPitch = 0f;
+    [SerializeField] private float playerLookInputLerpTime = 0.35f;
+    [SerializeField] private float rotationSpeedMultiplier = 180.0f;
+    [SerializeField] private float pitchSpeedMultiplier = 180.0f;
 
     [FormerlySerializedAs("_movementMultiplier")]
     [Header("Movement")]
